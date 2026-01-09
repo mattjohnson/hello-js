@@ -1,0 +1,21 @@
+# agp configuration file
+# See: https://github.com/sonatype/agentic-patches#configuration
+
+version: "1"
+pr:
+    title_template: 'chore(deps): {{.GroupName}}'
+    body_template: |-
+        ## Summary
+
+        {{.Summary}}
+
+        ## Packages Updated
+
+        {{.PackageCount}} package(s) updated
+    labels:
+        - dependencies
+    reviewers: []
+    draft: true
+    branch_template: agp/{{.GroupID}}
+validation:
+    enabled: false
